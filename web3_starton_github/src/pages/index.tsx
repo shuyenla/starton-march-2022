@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import StartonCardWeb3Provider from 'components/Core/StartonCardWeb3Provider'
 
 function Copyright() {
   return (
@@ -59,8 +60,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3];
-// const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const cards = [
+//   1: image={"/images/pro_one.png"}, 
+//   2: {image="/images/pro_one.png"}, 
+//   3: {image="/images/pro_one.png"}
+//  ];
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function Album() {
   const classes = useStyles();
@@ -77,8 +82,9 @@ export default function Album() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Button href="./sign_in/" variant="contained" color="primary">
                     sign in
+                    
                   </Button>
                 </Grid>
                 <Grid item>
@@ -91,16 +97,14 @@ export default function Album() {
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
-        <Link href="./projects/" color="inherit">
-          testttt
-</Link>
+          {/* <Link href="./projects/" color="inherit">
+            testttt
+          </Link> */}
+
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
-
-
-                <Button>
-                  
+                <Button href="./projects/">
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
