@@ -31,10 +31,10 @@ const StartonLayout: React.FC<AppProps> = ({ Component, pageProps }: AppProps) =
 
 	return (
 		<Container className={classes.container}>
-			<StartonNavBar />
+			{/* <StartonNavBar />
 			<Paper className={classes.paper}>
 				<Component {...pageProps} />
-			</Paper>
+			</Paper> */}
 		</Container>
 	)
 }
