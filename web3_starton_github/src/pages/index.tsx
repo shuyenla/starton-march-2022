@@ -13,7 +13,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import { formControlClasses } from '@mui/material';
 
 function Copyright() {
   return (
@@ -61,41 +60,79 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const cards = [1, 2, 3];
+// const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function Album() {
   const classes = useStyles();
 
   return (
     <React.Fragment>
-	<CssBaseline />
+      <CssBaseline />
       <main>
-		<div style={{width: '100%', height: '500px', backgroundImage: 'url("/images/front.png")', backgroundSize: 'cover'}}>
-			<img src='url("/images/Search.png")' style={{left: '500px', display: 'flex'}} />
-		</div>
+        <div style={{ width: '100%', height: '500px', backgroundImage: 'url("/images/front.png")', backgroundSize: 'cover' }}>
+        </div>
+
+        <div className={classes.heroContent}>
+          <Container maxWidth="sm" >
+            <div className={classes.heroButtons}>
+              <Grid container spacing={2} justifyContent="center">
+                <Grid item>
+                  <Button variant="contained" color="primary">
+                    sign in
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="outlined" color="primary">
+                    Sign up
+                  </Button>
+                </Grid>
+              </Grid>
+            </div>
+          </Container>
+        </div>
         <Container className={classes.cardGrid} maxWidth="md">
+        <Link href="./projects/" color="inherit">
+          testttt
+</Link>
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="/images/pro_one.png"
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the content.
-                    </Typography>
-                  </CardContent>
-                </Card>
+
+
+                <Button>
+                  
+                  <Card className={classes.card}>
+                    <CardMedia
+                      className={classes.cardMedia}
+                      image="/images/pro_one.png"
+                      title="Image title"
+                    />
+                    <CardContent className={classes.cardContent}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        Heading
+                      </Typography>
+                      <Typography>
+                        describe the project.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Button>
               </Grid>
             ))}
           </Grid>
         </Container>
       </main>
-     </React.Fragment>
+      {/* Footer */}
+      <footer className={classes.footer}>
+        <Typography variant="h6" align="center" gutterBottom>
+          Footer
+        </Typography>
+        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+          Something here to give the footer a purpose!
+        </Typography>
+        <Copyright />
+      </footer>
+      {/* End footer */}
+    </React.Fragment>
   );
 }
