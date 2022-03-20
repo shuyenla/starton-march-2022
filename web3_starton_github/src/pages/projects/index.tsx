@@ -18,6 +18,8 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 
+import { g_signature } from './../../components/Core/StartonCardWeb3Provider/index'
+// export { g_signature } : any = null;
 
 const currencies = [
     {
@@ -86,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
 
 function SelectTextFields() {
     const [currency, setCurrency] = React.useState('100');
+	// console.log(g_signature)
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrency(event.target.value);
