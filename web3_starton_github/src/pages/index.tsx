@@ -18,6 +18,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { Theme, Box, Paper, useTheme } from '@material-ui/core'
 import {ethers} from 'ethers'
+import Project from "./projects/index"
 
 
 function Copyright() {
@@ -25,7 +26,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        DeepPro
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -43,18 +44,19 @@ const useStyles = makeStyles((theme) => ({
   },
   heroButtons: {
     marginTop: theme.spacing(4),
+    height:"0px"
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
+    paddingBottom: theme.spacing(0),
   },
   card: {
-    height: '100%',
+    height: '20%',
     display: 'flex',
     flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '100%', // 16:9
   },
   cardContent: {
     flexGrow: 1,
@@ -65,22 +67,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const cards = {[
-//   1: image='url("/images/pro_one.png")', 
-//   2: image='url("/images/pro_one.png")', 
-//   3: image='url("/images/pro_one.png")'
-//  ]};
-
-// const itemData = [
-//   {
-//     img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-//     title: 'Breakfast',
-//   },
-//   {
-//     img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-//     title: 'Burger',
-//   },
-// ];
 const itemData = [
   {
     img: './images/picone.png',
@@ -96,30 +82,42 @@ const itemData = [
   },
 ];
 
-const Album: React.FC = () => {
+const HomePage: React.FC = () => {
   const classes = useStyles();
   const back = {
     backgroundImage: "url(/images/BackgroundDeepPro.png)",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-	height: '100%'
+	  height: '100vh'
   }
 
   const [try_logging, setTry_logging] = React.useState(false);
   const [address, setAddress] = React.useState<string>("");
   const [addressReady, setAddressReady] = React.useState<boolean>(false);
+  const [goToProject, setGoToProject] = React.useState<boolean>(false);
 
   const theme = useTheme();
 
 	return (
     <React.Fragment > 
       	<main >
-		{ !try_logging && (
-			<div>
+		{goToProject && (
+			<Project getAddress={address}></Project>
+		)}
+		{!goToProject && !try_logging && (
+				<div>
 				<CssBaseline />
-			<div style={back}>
-			<div style={{ width: '100%', height: '500px', backgroundImage: 'url("/images/front.png")', backgroundSize: 'cover' }}>
-			</div>
+				<div style={back}>
+				<div style={{}}>
+				<img
+				alt={''}
+				src="/images/front.png"
+				style={{ height: '500px',
+				width: '100%' }}
+				></img>
+				</div>
+			{/* <div style={{ width: '100%', height: '500px', backgroundImage: 'url("/images/front.png")', backgroundSize: 'cover' }}> */}
+			{/* </div> */}
 			<div >
 			<Container maxWidth="sm" >
 				{ !addressReady && (
@@ -144,7 +142,7 @@ const Album: React.FC = () => {
 			<Grid container spacing={4} >
 				<ImageList sx={{ width: 500, height: 450}} cols={3} rowHeight={164}>
 				{itemData.map((item) => (
-					<Button href="./projects/">
+					<Button onClick={() => {setGoToProject(true)}}>
 
 			<ImageListItem key={item.img}>
 				<img
@@ -157,14 +155,14 @@ const Album: React.FC = () => {
 			</ImageListItem>
 			</Button>
 
-	))}
+))}
 				</ImageList>
 			</Grid>
 			</Container >
 			</div>
 			</div>
 	) }
-	{try_logging && (
+	{!goToProject && try_logging && (
 		<Paper className={classes.container}>
 		<Grid container>
 			<Box
@@ -176,21 +174,21 @@ const Album: React.FC = () => {
 				lg={5}
 				xl={6}
 				display={{ xs: 'none', sm: 'none', md: 'none', lg: 'block' }}
-			>
+				>
 				{theme.palette.type === 'dark' ? (
 					<img
-						style={{ display: 'inline-block' }}
-						alt="logo Light"
-						src="/images/logo-light-left-shadow.png"
-						width={600}
+					style={{ display: 'inline-block' }}
+					alt="logo Light"
+					src="/images/logo-light-left-shadow.png"
+					width={600}
 					/>
-				) : (
-					<img
+					) : (
+						<img
 						style={{ display: 'inline-block' }}
 						alt="logo Dark"
 						src="/images/logo-mono-left-shadow.png"
 						width={600}
-					/>
+						/>
 				)}
 				<Typography variant="h3" className={classes.pannelTitle}>
 					Blockchain made simple
@@ -207,9 +205,12 @@ const Album: React.FC = () => {
 			</Grid>
 		</Paper>
 	)}
+	<footer style={{paddingBottom: '20px'}}>
+                <Copyright />
+            </footer>
 		</main >
     </React.Fragment >
   );
 }
 
-export default Album
+export default HomePage

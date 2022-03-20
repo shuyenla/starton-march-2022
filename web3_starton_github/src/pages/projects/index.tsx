@@ -18,8 +18,6 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 
-import { g_signature } from '../../components/Core/StartonCardWeb3Provider/index';
-
 const currencies = [
     {
         value: '20',
@@ -123,8 +121,10 @@ function SelectTextFields() {
     );
 }
 
-export default function Album() {
+const Project: React.FC = (props : any) => {
     const classes = useStyles();
+
+	console.log("address : ", props.getAddress);
 
     return (
         <React.Fragment>
@@ -146,8 +146,10 @@ export default function Album() {
                     FUNDING GOAL
                 </Container>
                 <Container className={classes.cardGrid} maxWidth="md">
-					<div>
-					<img src='url("/images/found_goal.png")' style={{width: '100%'}} />
+					<div style={{width: '80%', height: '230px'}}>
+						<img src="/images/croped_found_goal.png" 
+							style={{marginTop: '50px', marginLeft: '12%',
+									display: 'flex', alignItems: 'center', justifyContent: 'center'}}/>
 					</div>
 				</Container>
                 <Container >
@@ -175,14 +177,14 @@ export default function Album() {
 
 <SelectTextFields></SelectTextFields>
             </main>
-            {/* Footer */}
             <footer className={classes.footer}>
                 <Copyright />
             </footer>
-            {/* End footer */}
         </React.Fragment>
     );
 }
+
+export default Project
 
 
 
