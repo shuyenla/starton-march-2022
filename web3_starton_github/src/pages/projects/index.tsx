@@ -124,24 +124,74 @@ function SelectTextFields() {
 
 export default function Album() {
     const classes = useStyles();
+    const back = {
+        backgroundImage: "url(/images/BackgroundDeepPro.png)",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+          height: '100%'
+      }
 
     return (
         <React.Fragment>
             <CssBaseline />
             <main>
-                <div style={{ width: '100%', height: '500px', backgroundImage: 'url("/images/Ukraine_pro.jpeg")', backgroundSize: 'cover' }}>
-                </div>
-                <Container>
-                    .
-                </Container>
-                <Container>
-                    ACTION GOAL
-                </Container>
-                <Container className={classes.cardGrid} maxWidth="md">
-					The situation on the border of Eastern Ukraine and the escalation of hostilities has triggered an outflow of Ukrainian refugees seeking safety from the conflict. As of March 12, the total number of refugees fleeing Ukraine reached 2.5 million people.
-					This project aim to assist refugees and asylum seekers with local integration and self-reliance.
-                </Container>
-                <Container>
+                <div style={back}>
+                    <div>
+                            <img
+                                src="/images/Ukraine_pro.jpg"
+                                style={{ height: '100%',
+                                width: '100%'
+                            }}
+                            ></img>
+                    </div>
+                    <div style={{position: 'relative'}}>
+                        <div>
+                            <img
+                                src="/images/text_background.png"
+                                style={{ height: '100%',
+                                width: '70%',
+                                marginLeft:'15%'
+                            }}
+                            ></img>
+                            <div>
+                                <Container style={{color: 'black', position: 'absolute', right: '50%', left: '4%', bottom: '50%', width: '5%', fontSize: 30, fontWeight: 'bold'}}>
+                                    <h1>ACTION GOAL</h1>
+                                </Container>
+                                <Container style={{color: 'white', position: 'absolute', right: '50%', left: '40%', bottom: '40%', width: '30%', fontSize: 16, fontWeight: 'bold'}}>
+                                    The situation on the border of Eastern Ukraine and the escalation of hostilities has triggered an outflow of Ukrainian refugees seeking safety from the conflict. As of March 12, the total number of refugees fleeing Ukraine reached 2.5 million people.
+                                    This project aim to assist refugees and asylum seekers with local integration and self-reliance.
+                                </Container>
+                            </div>
+                        </div>
+                    </div>
+                    <Container style={{color:'white', fontSize: 30, fontWeight: 'bold'}}>
+                        DECISIONS YOU NEED TO VOTE
+                    </Container>
+                    <div>
+                        <div>
+                            <div>        
+                                <Container style={{color: 'white', right: '50%', left: '40%', height: '100px', width: '30%', fontSize: 16, fontWeight: 'bold'}}>
+                                Once the required amount has been met, the participant will be able to vote for the different aid topics, which include :
+                                    <div>
+                                        . Distribution of food and hygienic kits
+                                    </div> 
+                                    <div>
+                                        . Providing shelters with AirBnB bookings
+                                    </div> 
+                                    <div>
+                                        . Recruitment of attorneys for legal aid
+                                    </div> 
+                                    <div>
+                                        . Recruitment of psychiatrists specialized in war trauma
+                                    </div> 
+                                    <div>
+                                        . Financing a literacy club for children
+                                    </div> 
+                                </Container>
+                            </div>
+                        </div>
+                    </div>
+                <Container style={{color:'white', fontSize: 30, fontWeight: 'bold', height: '100%'}}>
                     FUNDING GOAL
                 </Container>
                 <Container className={classes.cardGrid} maxWidth="md">
@@ -151,34 +201,18 @@ export default function Album() {
 									display: 'flex', alignItems: 'center', justifyContent: 'center'}}/>
 					</div>
 				</Container>
-                <Container >
-                    DECISIONS
-                </Container>
-                <Container className={classes.cardGrid} maxWidth="md">
-                    Once the required amount has been met, the participant will be able to vote for the different aid topics, which include :
-					<div>
-						. Distribution of food and hygienic kits
-					</div> 
-					<div>
-						. Providing shelters with AirBnB bookings
-					</div> 
-					<div>
-						. Recruitment of attorneys for legal aid
-					</div> 
-					<div>
-						. Recruitment of psychiatrists specialized in war trauma
-					</div> 
-					<div>
-						. Financing a literacy club for children
-					</div> 
-                </Container>
 
 
-<SelectTextFields></SelectTextFields>
-            </main>
-            <footer className={classes.footer}>
-                <Copyright />
-            </footer>
+                <SelectTextFields></SelectTextFields>
+                <footer >
+                    <Copyright />
+                </footer>
+                <div  style={{height:'30px'}}/>
+
+        </div>
+        </main>
+
+
         </React.Fragment>
     );
 }

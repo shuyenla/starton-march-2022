@@ -83,14 +83,14 @@ export default function Album() {
     backgroundImage: "url(/images/BackgroundDeepPro.png)",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-	  height: '100vh'
+	  height: '100%'
   }
 
   return (
     <React.Fragment >
       <CssBaseline />
+      <div style={back}>
       <main >
-		<div style={back}>
         <div style={{}}>
         <img
 											alt={''}
@@ -137,9 +137,11 @@ export default function Album() {
 		  <footer style={{paddingBottom: '20px'}}>
                 <Copyright />
             </footer>
+            <div  style={{height:'30px'}}/>
             {/* End footer */}
-		</div>
+
       </main >
+      </div>
     </React.Fragment >
   );
 }
