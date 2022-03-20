@@ -105,9 +105,9 @@ export default function Album() {
     <React.Fragment >
       <CssBaseline />
       <main >
+		<div style={back}>
         <div style={{ width: '100%', height: '500px', backgroundImage: 'url("/images/front.png")', backgroundSize: 'cover' }}>
         </div>
-		<div style={back}>
         <div >
           <Container maxWidth="sm" >
             <div className={classes.heroButtons}>

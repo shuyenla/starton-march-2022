@@ -18,8 +18,6 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 
-import { g_signature } from './../../components/Core/StartonCardWeb3Provider/index'
-// export { g_signature } : any = null;
 
 const currencies = [
     {
@@ -88,7 +86,6 @@ const useStyles = makeStyles((theme) => ({
 
 function SelectTextFields() {
     const [currency, setCurrency] = React.useState('100');
-	// console.log(g_signature)
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrency(event.target.value);
@@ -143,12 +140,14 @@ export default function Album() {
 					The situation on the border of Eastern Ukraine and the escalation of hostilities has triggered an outflow of Ukrainian refugees seeking safety from the conflict. As of March 12, the total number of refugees fleeing Ukraine reached 2.5 million people.
 					This project aim to assist refugees and asylum seekers with local integration and self-reliance.
                 </Container>
-                {/* <Container>
+                <Container>
                     FUNDING GOAL
                 </Container>
                 <Container className={classes.cardGrid} maxWidth="md">
-                    Justo nec ultrices dui sapien eget mi proin. Libero enim sed faucibus turpis in. Amet tellus cras adipiscing enim eu turpis egestas pretium. Ipsum consequat nisl vel pretium lectus quam id. Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Nibh tellus molestie nunc non blandit massa. Suspendisse ultrices gravida dictum fusce ut placerat orci. Risus at ultrices mi tempus imperdiet nulla. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. Pretium nibh ipsum consequat nisl vel pretium lectus quam. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Laoreet suspendisse interdum consectetur libero id faucibus. Integer eget aliquet nibh praesent tristique magna. Odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Sit amet facilisis magna etiam. Enim nec dui nunc mattis enim ut tellus elementum sagittis. Sed nisi lacus sed viverra tellus in hac habitasse platea. Condimentum id venenatis a condimentum.
-                </Container> */}
+					<div>
+					<img src='url("/images/found_goal.png")' style={{width: '100%'}} />
+					</div>
+				</Container>
                 <Container >
                     DECISIONS
                 </Container>
