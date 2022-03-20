@@ -18,6 +18,10 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 
+const ProjectWallet : string = "0x306f85da13b72b8aba2a0f0e9f2be10c5c2a6317";
+let http : any;
+let axios : any;
+
 const currencies = [
     {
         value: '20',
@@ -83,13 +87,26 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-function SelectTextFields() {
+function SelectTextFields(props: any) {
     const [currency, setCurrency] = React.useState('100');
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrency(event.target.value);
-		console.log(g_signature);
+		// http.post('/smart-contract/ethereum-ropsten/0x4CA0C47f529602f0DB24B4C1345BB27E94069806/call',
+		// {
+		// 	"functionName": 'transferFrom',
+		// 	"signerWallet": props.address,
+		// 	"speed": "low",
+		// 	"params": [
+		// 		props.address, // address 0x0000000000000000000000000000000000000000
+		// 		ProjectWallet, // address 0x0000000000000000000000000000000000000000
+		// 		currency // uint256 42
+		// 	],
+
+		// }).then(response => { console.log(response.data) })
     };
+
+	
 
     return (
         // <Box
@@ -121,6 +138,17 @@ function SelectTextFields() {
     );
 }
 
+function setupSC() {
+	axios = require("axios")
+
+	http = axios.create({
+		baseURL: "https://api.starton.io/v2",
+		headers: {
+			"x-api-key": 'ICoUgf6mDoKpgWo4aJJC6kOOA5APTeqO',
+		},
+	})
+}
+
 const Project: React.FC = (props : any) => {
     const classes = useStyles();
     const back = {
@@ -130,7 +158,7 @@ const Project: React.FC = (props : any) => {
           height: '100%'
       }
 
-	console.log("address : ", props.getAddress);
+	setupSC();
 
     return (
         <React.Fragment>
@@ -166,7 +194,7 @@ const Project: React.FC = (props : any) => {
                         </div>
                     </div>
                     <Container style={{color:'white', fontSize: 30, fontWeight: 'bold'}}>
-                        DECISIONS YOU NEED TO VOTE
+                        DECISIONS YOU'LL NEED TO VOTE
                     </Container>
                     <div>
                         <div>
@@ -219,86 +247,3 @@ const Project: React.FC = (props : any) => {
 }
 
 export default Project
-
-
-
-
-// import React from 'react';
-// import Avatar from '@material-ui/core/Avatar';
-// import Button from '@material-ui/core/Button';
-// import CssBaseline from '@material-ui/core/CssBaseline';
-// import TextField from '@material-ui/core/TextField';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import Checkbox from '@material-ui/core/Checkbox';
-// import Link from '@material-ui/core/Link';
-// import Grid from '@material-ui/core/Grid';
-// import Box from '@material-ui/core/Box';
-// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-// import Typography from '@material-ui/core/Typography';
-// import { makeStyles } from '@material-ui/core/styles';
-// import Container from '@material-ui/core/Container';
-
-
-// const useStyles = makeStyles((theme) => ({
-//   paper: {
-//     marginTop: theme.spacing(8),
-//     display: 'flex',
-//     flexDirection: 'column',
-//     alignItems: 'center',
-//   },
-//   avatar: {
-//     margin: theme.spacing(1),
-//     backgroundColor: theme.palette.secondary.main,
-//   },
-//   form: {
-//     width: '100%', // Fix IE 11 issue.
-//     marginTop: theme.spacing(1),
-//   },
-//   submit: {
-//     margin: theme.spacing(3, 0, 2),
-//   },
-// }));
-
-// export default function SignIn() {
-//   const classes = useStyles();
-
-//   return (
-//     <Container component="main" maxWidth="xs">
-//       <CssBaseline />
-//       <div className={classes.paper}>
-//         <Avatar className={classes.avatar}>
-//           <LockOutlinedIcon />
-//         </Avatar>
-//         <Typography component="h1" variant="h5">
-//           Sign in
-//         </Typography>
-//         <form className={classes.form} noValidate>
-//           <TextField
-//             variant="outlined"
-//             margin="normal"
-//             required
-//             fullWidth
-//             id="email"
-//             label="Email Address"
-//             name="email"
-//             autoComplete="email"
-//             autoFocus
-//           />
-//           {/* <FormControlLabel
-//             control={<Checkbox value="remember" color="primary" />}
-//             label="Remember me"
-//           /> */}
-//           <Button
-//             type="submit"
-//             fullWidth
-//             variant="contained"
-//             color="primary"
-//             className={classes.submit}
-//           >
-//             Sign In
-//           </Button>
-//         </form>
-//       </div>
-//     </Container>
-//   );
-// }
