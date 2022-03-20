@@ -193,43 +193,54 @@ const Project: React.FC = (props : any) => {
                             </div>
                         </div>
                     </div>
-                    <Container style={{color:'white', fontSize: 30, fontWeight: 'bold'}}>
-                        DECISIONS YOU'LL NEED TO VOTE
-                    </Container>
                     <div>
-                        <div>
+                    <Container style={{color:'white', fontSize: 30, fontWeight: 'bold'}}>
+                        DECISIONS YOU'LL VOTE
+                    </Container>
+                 
                             <div>        
                                 <Container style={{color: 'white', right: '50%', left: '40%', height: '100px', width: '30%', fontSize: 16, fontWeight: 'bold'}}>
-                                Once the required amount has been met, the participant will be able to vote for the different aid topics, which include :
+                                <div style={{height: '40px'}}>
+                                        </div>
                                     <div>
                                         . Distribution of food and hygienic kits
                                     </div> 
+                                    <div style={{height: '10px'}}>
+                                        </div>
                                     <div>
                                         . Providing shelters with AirBnB bookings
                                     </div> 
+                                    <div style={{height: '10px'}}>
+                                        </div>
                                     <div>
                                         . Recruitment of attorneys for legal aid
-                                    </div> 
+                                    </div>
+                                    <div style={{height: '10px'}}>
+                                        </div>
                                     <div>
                                         . Recruitment of psychiatrists specialized in war trauma
-                                    </div> 
+                                    </div>
+                                    <div style={{height: '10px'}}>
+                                        </div>
                                     <div>
                                         . Financing a literacy club for children
                                     </div> 
                                 </Container>
                             </div>
-                        </div>
                     </div>
-                <Container style={{color:'white', fontSize: 30, fontWeight: 'bold', height: '100%'}}>
-                    FUNDING GOAL
-                </Container>
-                <Container className={classes.cardGrid} maxWidth="md">
-					<div style={{width: '80%', height: '230px'}}>
-						<img src="/images/croped_found_goal.png" 
-							style={{marginTop: '50px', marginLeft: '12%',
-									display: 'flex', alignItems: 'center', justifyContent: 'center'}}/>
-					</div>
-				</Container>
+                    <div style={{position: 'relative'}}>
+                        <Container style={{position: 'absolute', left: '15%', bottom: '55%', color:'white', fontSize: 30, fontWeight: 'bold'}}>
+                        FUNDING GOAL
+                        </Container>
+                        
+                        <Container className={classes.cardGrid} maxWidth="md">
+                            <div style={{width: '80%', height: '230px'}}>
+                                <img src="/images/croped_found_goal.png" 
+                                    style={{marginTop: '250px', marginLeft: '12%',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center'}}/>
+                            </div>
+                        </Container>
+                    </div>
 
 
                 <SelectTextFields></SelectTextFields>
