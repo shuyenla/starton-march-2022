@@ -21,7 +21,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        DeepPro
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -61,22 +61,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const cards = {[
-//   1: image='url("/images/pro_one.png")', 
-//   2: image='url("/images/pro_one.png")', 
-//   3: image='url("/images/pro_one.png")'
-//  ]};
-
-// const itemData = [
-//   {
-//     img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-//     title: 'Breakfast',
-//   },
-//   {
-//     img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-//     title: 'Burger',
-//   },
-// ];
 const itemData = [
   {
     img: './images/picone.png',
@@ -147,6 +131,11 @@ export default function Album() {
             </ImageList>
           </Grid>
         </Container >
+		  {/* Footer */}
+		  <footer style={{paddingBottom: '20px'}}>
+                <Copyright />
+            </footer>
+            {/* End footer */}
 		</div>
       </main >
     </React.Fragment >
