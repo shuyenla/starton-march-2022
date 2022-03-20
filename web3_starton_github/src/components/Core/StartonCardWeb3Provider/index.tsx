@@ -147,7 +147,7 @@ const CardSigning = () => {
                 .then((res) => {
                     signature = res
 					g_signature = res;
-					Object.freeze(g_signature);
+					// Object.freeze(g_signature);
                     console.log("signature : ", g_signature)
                 })
             await axios.post('http://localhost:3000/signin', {
