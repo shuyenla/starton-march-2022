@@ -16,7 +16,7 @@ import { injected, walletconnect, walletlink } from './Web3Connectors'
 import { StartonCard } from '../StartonCard'
 
 // import { g_signature } from "./../../pages/projects/index"
-export const g_signature : any = null;
+export let g_signature : any = null;
 
 type StyleProps = Record<string, string | number>
 type StyleClassKey =
@@ -111,63 +111,64 @@ const CardSigning = () => {
 	// 	return 'Succesfully signed';
 	// }
 
-	const verifyWallet = async () => {
-		/**
-		 * Fix invalid signature
-		 * Use personal_sign instead of eth_sign
-		 * https://github.com/walletlink/walletlink/issues/45
-		 * */
-		Object.defineProperties(library?.provider, { isMetaMask: { value: true } })
-
-		try {
-			await library?.getSigner().signMessage('Welcome to Starton' as string)
-			library?.
-			/* Send the return of the signature at your back end here
-			 await axios.post('/verify-message', ...)
-				*/
-			setVerified(true)
-		} catch (err) {
-			disconnect()
-		}
-	}
-
 	// const verifyWallet = async () => {
-    //     /**
-    //      * Fix invalid signature
-    //      * Use personal_sign instead of eth_sign
-    //      * https://github.com/walletlink/walletlink/issues/45
-    //      * */
-    //     Object.defineProperties(library?.provider, { isMetaMask: { value: true } })
+	// 	/**
+	// 	 * Fix invalid signature
+	// 	 * Use personal_sign instead of eth_sign
+	// 	 * https://github.com/walletlink/walletlink/issues/45
+	// 	 * */
+	// 	Object.defineProperties(library?.provider, { isMetaMask: { value: true } })
 
-    //     try {
-    //         let signature = null
-    //         await library
-    //             ?.getSigner()
-    //             .signMessage('Welcome to Starton' as string)
-    //             .then((res) => {
-    //                 signature = res
-	// 				g_signature = res;
-    //                 console.log("signature : ", signature)
-    //             })
-    //         await axios.post('http://localhost:3000/signin', {
-    //             signature: signature,
-    //         })
-    //             .then((res) => {
-    //                 console.log('retour de signing : ', res)
-    //             })
-    //             .catch((e) => {
-    //                 console.log('error : ', e)
-    //             })
-    //         Ò.setVerified(true)
-    //     } catch (err) {
-    //         if (connector) {
-    //             deactivate()
-    //             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //             // @ts-ignore
-    //             if (connector && connector.close) connector?.close()
-    //         }
-    //     }
-    // }
+	// 	try {
+	// 		await library?.getSigner().signMessage('Welcome to Starton' as string)
+	// 		library?.
+	// 		/* Send the return of the signature at your back end here
+	// 		 await axios.post('/verify-message', ...)
+	// 			*/
+	// 		setVerified(true)
+	// 	} catch (err) {
+	// 		disconnect()
+	// 	}
+	// }
+
+	const verifyWallet = async () => {
+        /**
+         * Fix invalid signature
+         * Use personal_sign instead of eth_sign
+         * https://github.com/walletlink/walletlink/issues/45
+         * */
+        Object.defineProperties(library?.provider, { isMetaMask: { value: true } })
+
+        try {
+            let signature = null
+            await library
+                ?.getSigner()
+                .signMessage('Welcome to Starton' as string)
+                .then((res) => {
+                    signature = res
+					g_signature = res;
+					// Object.freeze(g_signature);
+                    console.log("signature : ", g_signature)
+                })
+            await axios.post('http://localhost:3000/signin', {
+                signature: signature,
+            })
+                .then((res) => {
+                    console.log('retour de signing : ', res)
+                })
+                .catch((e) => {
+                    console.log('error : ', e)
+                })
+            .setVerified(true)
+        } catch (err) {
+            if (connector) {
+                deactivate()
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                if (connector && connector.close) connector?.close()
+            }
+        }
+    }
 
 	const web3Providers = [
 		{
