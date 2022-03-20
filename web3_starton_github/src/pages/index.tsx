@@ -88,7 +88,7 @@ const HomePage: React.FC = () => {
     backgroundImage: "url(/images/BackgroundDeepPro.png)",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-	  height: '100vh'
+	  height: '100%'
   }
 
   const [try_logging, setTry_logging] = React.useState(false);
@@ -128,11 +128,6 @@ const HomePage: React.FC = () => {
 						sign in
 					</Button>
 					</Grid>
-					<Grid item>
-					<Button variant="outlined" color="primary">
-						Sign up
-					</Button>
-					</Grid>
 				</Grid>
 				</div>
 				)}
@@ -159,6 +154,10 @@ const HomePage: React.FC = () => {
 				</ImageList>
 			</Grid>
 			</Container >
+      <footer style={{paddingBottom: '20px', height:'30px'}}>
+                <Copyright />
+                <div  style={{height:'30px'}}/>
+            </footer>
 			</div>
 			</div>
 	) }
@@ -205,10 +204,12 @@ const HomePage: React.FC = () => {
 			</Grid>
 		</Paper>
 	)}
-	<footer style={{paddingBottom: '20px'}}>
-                <Copyright />
-            </footer>
-		</main >
+	
+            
+            
+            {/* End footer */}
+
+      </main>
     </React.Fragment >
   );
 }
