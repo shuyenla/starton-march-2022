@@ -30,7 +30,7 @@ const StartonLayout: React.FC<AppProps> = ({ Component, pageProps }: AppProps) =
 	const classes: PropClasses = useStyles({} as StyleProps)
 
 	return (
-		<Container>
+		<Container className={classes.container}>
 			<Paper>
 				<Component {...pageProps} />
 			</Paper>

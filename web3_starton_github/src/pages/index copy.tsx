@@ -16,6 +16,7 @@ import Link from '@material-ui/core/Link';
 import StartonCardWeb3Provider from 'components/Core/StartonCardWeb3Provider'
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -39,22 +40,21 @@ const useStyles = makeStyles((theme) => ({
   },
   heroButtons: {
     marginTop: theme.spacing(4),
-    height:"0px"
   },
   cardGrid: {
-    paddingTop: theme.spacing(0),
-    paddingBottom: theme.spacing(0),
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
   },
   card: {
-    height: '20%',
+    height: '100%',
     display: 'flex',
     flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: '30%', // 16:9
+    paddingTop: '56.25%', // 16:9
   },
   cardContent: {
-    flexGrow: 1,
+    flexGrow: 10,
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -99,7 +99,8 @@ export default function Album() {
     backgroundImage: "url(/images/BackgroundDeepPro.png)",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-	  height: '100vh'
+	  height: '100%',
+    width: '100%'
   }
 
   return (
@@ -107,14 +108,8 @@ export default function Album() {
       <CssBaseline />
       <main >
 		<div style={back}>
-        <div style={{}}>
-        <img
-											alt={''}
-											src="/images/front.png"
-											style={{ height: '500px',
-                        width: '100%' }}
-										></img>
-          </div>
+        <div style={{ width: '100%', height: '500px', backgroundImage: 'url("/images/front.png")', backgroundSize: 'cover' }}>
+        </div>
         <div >
           <Container maxWidth="sm" >
             <div className={classes.heroButtons}>
@@ -124,13 +119,18 @@ export default function Album() {
                     sign in
                   </Button>
                 </Grid>
+                <Grid item>
+                  <Button variant="outlined" color="primary">
+                    Sign up
+                  </Button>
+                </Grid>
               </Grid>
             </div>
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4} >
-            <ImageList sx={{ width: 1000, height: 450}} cols={3} rowHeight={200}>
+            <ImageList sx={{ width: 500, height: 450}} cols={3} rowHeight={164}>
               {itemData.map((item) => (
         <Button href="./projects/">
 
