@@ -1,1 +1,0 @@
-export { StartonButton } from './StartonButton'

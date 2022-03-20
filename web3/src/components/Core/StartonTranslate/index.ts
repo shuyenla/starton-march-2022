@@ -1,1 +1,0 @@
-export { StartonTranslate } from './StartonTranslate'
