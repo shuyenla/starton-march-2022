@@ -92,6 +92,7 @@ function SelectTextFields() {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrency(event.target.value);
+		console.log(g_signature);
     };
 
     return (
