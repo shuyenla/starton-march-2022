@@ -81,15 +81,15 @@ const itemData = [
   {
     // image="/images/pro_one.png"
 
-    img: './images/pro_one.png',
+    img: './images/Ukraine_pro.jpg',
     // title: 'Breakfast',
   },
   {
-    img: './images/pro_one.png',
+    img: './images/coral_reef.jpg',
     // title: 'Breakfast',
   },
   {
-    img: './images/pro_one.png',
+    img: './images/LGBTQ.jpg',
     // title: 'Breakfast',
   },
 ];
