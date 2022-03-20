@@ -92,6 +92,11 @@ function SelectTextFields(props: any) {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrency(event.target.value);
+		console.log("sender : ", props.address);
+		console.log("recipient : ", ProjectWallet);
+		console.log("amount : ", currency);
+
+		// ! this returns a 404 status code, should transfer from client to project wallet
 		// http.post('/smart-contract/ethereum-ropsten/0x4CA0C47f529602f0DB24B4C1345BB27E94069806/call',
 		// {
 		// 	"functionName": 'transferFrom',
@@ -102,7 +107,6 @@ function SelectTextFields(props: any) {
 		// 		ProjectWallet, // address 0x0000000000000000000000000000000000000000
 		// 		currency // uint256 42
 		// 	],
-
 		// }).then(response => { console.log(response.data) })
     };
 
@@ -243,7 +247,7 @@ const Project: React.FC = (props : any) => {
                     </div>
 
 
-                <SelectTextFields></SelectTextFields>
+                <SelectTextFields address={props.getAddress}></SelectTextFields>
                 <footer >
                     <Copyright />
                 </footer>
