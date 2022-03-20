@@ -128,7 +128,7 @@ export default function Album() {
         <React.Fragment>
             <CssBaseline />
             <main>
-                <div style={{ width: '100%', height: '500px', backgroundImage: 'url("/images/Ukraine_pro.png")', backgroundSize: 'cover' }}>
+                <div style={{ width: '100%', height: '500px', backgroundImage: 'url("/images/Ukraine_pro.jpeg")', backgroundSize: 'cover' }}>
                 </div>
                 <Container>
                     .
@@ -137,19 +137,35 @@ export default function Album() {
                     ACTION GOAL
                 </Container>
                 <Container className={classes.cardGrid} maxWidth="md">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictumst quisque sagittis purus sit amet volutpat. Egestas dui id ornare arcu odio ut sem nulla. Cras semper auctor neque vitae tempus quam pellentesque nec nam. Urna molestie at elementum eu facilisis sed. Id faucibus nisl tincidunt eget nullam non nisi est. Morbi tincidunt ornare massa eget egestas purus. Convallis convallis tellus id interdum velit laoreet. Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc. Laoreet id donec ultrices tincidunt arcu. Elementum nisi quis eleifend quam adipiscing vitae. Sit amet tellus cras adipiscing enim eu turpis. Semper eget duis at tellus at urna condimentum mattis pellentesque. Metus aliquam eleifend mi in nulla posuere. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus.
+					The situation on the border of Eastern Ukraine and the escalation of hostilities has triggered an outflow of Ukrainian refugees seeking safety from the conflict. As of March 12, the total number of refugees fleeing Ukraine reached 2.5 million people.
+					This project aim to assist refugees and asylum seekers with local integration and self-reliance.
                 </Container>
-                <Container>
+                {/* <Container>
                     FUNDING GOAL
                 </Container>
                 <Container className={classes.cardGrid} maxWidth="md">
                     Justo nec ultrices dui sapien eget mi proin. Libero enim sed faucibus turpis in. Amet tellus cras adipiscing enim eu turpis egestas pretium. Ipsum consequat nisl vel pretium lectus quam id. Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Nibh tellus molestie nunc non blandit massa. Suspendisse ultrices gravida dictum fusce ut placerat orci. Risus at ultrices mi tempus imperdiet nulla. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. Pretium nibh ipsum consequat nisl vel pretium lectus quam. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Laoreet suspendisse interdum consectetur libero id faucibus. Integer eget aliquet nibh praesent tristique magna. Odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Sit amet facilisis magna etiam. Enim nec dui nunc mattis enim ut tellus elementum sagittis. Sed nisi lacus sed viverra tellus in hac habitasse platea. Condimentum id venenatis a condimentum.
-                </Container>
+                </Container> */}
                 <Container >
                     DECISIONS
                 </Container>
                 <Container className={classes.cardGrid} maxWidth="md">
-                    Justo nec ultrices dui sapien eget mi proin. Libero enim sed faucibus turpis in. Amet tellus cras adipiscing enim eu turpis egestas pretium. Ipsum consequat nisl vel pretium lectus quam id. Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Nibh tellus molestie nunc non blandit massa. Suspendisse ultrices gravida dictum fusce ut placerat orci. Risus at ultrices mi tempus imperdiet nulla. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. Pretium nibh ipsum consequat nisl vel pretium lectus quam. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Laoreet suspendisse interdum consectetur libero id faucibus. Integer eget aliquet nibh praesent tristique magna. Odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Sit amet facilisis magna etiam. Enim nec dui nunc mattis enim ut tellus elementum sagittis. Sed nisi lacus sed viverra tellus in hac habitasse platea. Condimentum id venenatis a condimentum.
+                    Once the required amount has been met, the participant will be able to vote for the different aid topics, which include :
+					<div>
+						. Distribution of food and hygienic kits
+					</div> 
+					<div>
+						. Providing shelters with AirBnB bookings
+					</div> 
+					<div>
+						. Recruitment of attorneys for legal aid
+					</div> 
+					<div>
+						. Recruitment of psychiatrists specialized in war trauma
+					</div> 
+					<div>
+						. Financing a literacy club for children
+					</div> 
                 </Container>
 
 
