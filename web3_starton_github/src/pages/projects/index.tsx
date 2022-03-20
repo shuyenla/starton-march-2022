@@ -18,7 +18,6 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 
-
 const currencies = [
     {
         value: '20',
@@ -122,7 +121,7 @@ function SelectTextFields() {
     );
 }
 
-export default function Album() {
+const Project: React.FC = (props : any) => {
     const classes = useStyles();
     const back = {
         backgroundImage: "url(/images/BackgroundDeepPro.png)",
@@ -130,6 +129,8 @@ export default function Album() {
         backgroundRepeat: "no-repeat",
           height: '100%'
       }
+
+	console.log("address : ", props.getAddress);
 
     return (
         <React.Fragment>
@@ -216,6 +217,8 @@ export default function Album() {
         </React.Fragment>
     );
 }
+
+export default Project
 
 
 
