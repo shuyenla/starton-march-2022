@@ -79,39 +79,42 @@ const useStyles = makeStyles((theme) => ({
 // ];
 const itemData = [
   {
-    // image="/images/pro_one.png"
-
-    img: './images/Ukraine_pro.jpg',
+    img: './images/picone.png',
     // title: 'Breakfast',
   },
   {
-    img: './images/coral_reef.jpg',
+    img: './images/pictwo.png',
     // title: 'Breakfast',
   },
   {
-    img: './images/LGBTQ.jpg',
+    img: './images/picthree.png',
     // title: 'Breakfast',
   },
 ];
 
 export default function Album() {
   const classes = useStyles();
+  const back = {
+    backgroundImage: "url(/images/BackgroundDeepPro.png)",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+	height: '100%'
+  }
 
   return (
-    <React.Fragment>
+    <React.Fragment >
       <CssBaseline />
-      <main>
+      <main >
+		<div style={back}>
         <div style={{ width: '100%', height: '500px', backgroundImage: 'url("/images/front.png")', backgroundSize: 'cover' }}>
         </div>
-
-        <div className={classes.heroContent}>
+        <div >
           <Container maxWidth="sm" >
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <Button href="./sign_in/" variant="contained" color="primary">
                     sign in
-
                   </Button>
                 </Grid>
                 <Grid item>
@@ -124,29 +127,8 @@ export default function Album() {
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
-          <Grid container spacing={4}>
-            {/* {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Button href="./projects/">
-                  <Card className={classes.card}>
-                    {/* <CardMedia
-                      className={classes.cardMedia}
-                      // image="/images/pro_one.png"
-                      title="Image title"
-                    /> }
-            <CardContent className={classes.cardContent}>
-              <Typography gutterBottom variant="h5" component="h2">
-                Lend a hand for Ukraine
-              </Typography>
-              <Typography>
-                Help the refugees with foundings for food, shelter and legal aid.
-              </Typography>
-            </CardContent>
-          </Card>
-        </Button>
-      </Grid>
-            ))} */}
-            <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+          <Grid container spacing={4} >
+            <ImageList sx={{ width: 500, height: 450}} cols={3} rowHeight={164}>
               {itemData.map((item) => (
         <Button href="./projects/">
 
@@ -165,18 +147,8 @@ export default function Album() {
             </ImageList>
           </Grid>
         </Container >
+		</div>
       </main >
-      {/* Footer */}
-      < footer className={classes.footer} >
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </footer >
-      {/* End footer */}
     </React.Fragment >
   );
 }
