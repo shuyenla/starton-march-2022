@@ -89,6 +89,7 @@ function SelectTextFields() {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrency(event.target.value);
+		console.log(g_signature);
     };
 
     return (
@@ -143,11 +144,13 @@ export default function Album() {
                 <Container>
                     FUNDING GOAL
                 </Container>
-                <Container className={classes.cardGrid} maxWidth="md">
-					<div>
-					<img src='url("/images/found_goal.png")' style={{width: '100%'}} />
+                {/* <Container className={classes.cardGrid} maxWidth="md"> */}
+					<div style={{width: '80%', height: '230px'}}>
+						<img src="/images/croped_found_goal.png" 
+							style={{marginTop: '50px', marginLeft: '12%',
+									display: 'flex', alignItems: 'center', justifyContent: 'center'}}/>
 					</div>
-				</Container>
+				{/* </Container> */}
                 <Container >
                     DECISIONS
                 </Container>
@@ -173,11 +176,9 @@ export default function Album() {
 
 <SelectTextFields></SelectTextFields>
             </main>
-            {/* Footer */}
             <footer className={classes.footer}>
                 <Copyright />
             </footer>
-            {/* End footer */}
         </React.Fragment>
     );
 }
