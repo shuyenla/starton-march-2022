@@ -128,7 +128,7 @@ export default function Album() {
         <React.Fragment>
             <CssBaseline />
             <main>
-                <div style={{ width: '100%', height: '500px', backgroundImage: 'url("/images/front.png")', backgroundSize: 'cover' }}>
+                <div style={{ width: '100%', height: '500px', backgroundImage: 'url("/images/Ukraine_pro.png")', backgroundSize: 'cover' }}>
                 </div>
                 <Container>
                     .

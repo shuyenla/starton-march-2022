@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
 //   2: {image="/images/pro_one.png"}, 
 //   3: {image="/images/pro_one.png"}
 //  ];
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1, 2, 3];
 
 export default function Album() {
   const classes = useStyles();
@@ -97,10 +97,6 @@ export default function Album() {
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
-          {/* <Link href="./projects/" color="inherit">
-            testttt
-          </Link> */}
-
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
@@ -113,10 +109,10 @@ export default function Album() {
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
-                        Heading
+					 	 Lend a hand for Ukraine
                       </Typography>
                       <Typography>
-                        describe the project.
+                        Help the refugees with foundings for food, shelter and legal aid.
                       </Typography>
                     </CardContent>
                   </Card>
