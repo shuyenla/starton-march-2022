@@ -15,8 +15,6 @@ import clsx from 'clsx'
 import { injected, walletconnect, walletlink } from './Web3Connectors'
 import { StartonCard } from '../StartonCard'
 
-// import { g_signature } from "./../../pages/projects/index"
-export let g_signature : any = null;
 
 type StyleProps = Record<string, string | number>
 type StyleClassKey =
@@ -83,7 +81,7 @@ const useStyles = makeStyles<Theme, StyleProps, StyleClassKey>((theme) => {
 	}
 })
 
-const CardSigning = () => {
+const CardSigning = (props: any) => {
 	const classes: PropClasses = useStyles({} as StyleProps)
 	const { t } = useTranslation()
 
@@ -140,26 +138,12 @@ const CardSigning = () => {
         Object.defineProperties(library?.provider, { isMetaMask: { value: true } })
 
         try {
-            let signature = null
-            await library
-                ?.getSigner()
-                .signMessage('Welcome to Starton' as string)
-                .then((res) => {
-                    signature = res
-					g_signature = res;
-					// Object.freeze(g_signature);
-                    console.log("signature : ", g_signature)
+			const signer = library?.getSigner()
+			const address = await signer?.getAddress()
+            await signer.signMessage('Welcome to DeepPro' as string)
+                .then(() => {
+					props.setEverything(address);
                 })
-            await axios.post('http://localhost:3000/signin', {
-                signature: signature,
-            })
-                .then((res) => {
-                    console.log('retour de signing : ', res)
-                })
-                .catch((e) => {
-                    console.log('error : ', e)
-                })
-            .setVerified(true)
         } catch (err) {
             if (connector) {
                 deactivate()
