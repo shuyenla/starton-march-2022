@@ -144,13 +144,13 @@ export default function Album() {
                 <Container>
                     FUNDING GOAL
                 </Container>
-                {/* <Container className={classes.cardGrid} maxWidth="md"> */}
+                <Container className={classes.cardGrid} maxWidth="md">
 					<div style={{width: '80%', height: '230px'}}>
 						<img src="/images/croped_found_goal.png" 
 							style={{marginTop: '50px', marginLeft: '12%',
 									display: 'flex', alignItems: 'center', justifyContent: 'center'}}/>
 					</div>
-				{/* </Container> */}
+				</Container>
                 <Container >
                     DECISIONS
                 </Container>
